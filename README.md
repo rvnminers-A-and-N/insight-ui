@@ -1,10 +1,10 @@
 # Insight UI
 
-A Ravencoin blockchain explorer web application service for [Ravencore Node](https://github.com/OverstockMedici/ravencore-node) using the [Insight API](https://github.com/OverstockMedici/insight-api).
+A Ravencoin blockchain explorer web application service for [Ravencore Node](https://github.com/RavenDevKit/ravencore-node) using the [Insight API](https://github.com/RavenDevKit/insight-api).
 
 ## Quick Start
 
-Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Ravencore](https://github.com/OverstockMedici/ravencore).
+Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Ravencore](https://github.com/RavenDevKit/ravencore).
 
 ## Getting Started
 
@@ -70,11 +70,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/OverstockMedici/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/OverstockMedici/insight-api).
+For more details about the [Insight API](https://github.com/RavenDevKit/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/RavenDevKit/insight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/OverstockMedici/insight-ui).
+Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/RavenDevKit/insight-ui).
 
 
 ## License

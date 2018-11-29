@@ -2,7 +2,7 @@
   "name": "insight-ui",
   "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the ravencoin network and build your own services with it.",
   "version": "1.0.3",
-  "repository": "git://github.com/OverstockMedici/insight-ui.git",
+  "repository": "git://github.com/RavenDevKit/insight-ui.git",
   "contributors": [
     {
       "name": "Under",
@@ -13,9 +13,9 @@
     "build": "bower install && grunt compile"
   },
   "bugs": {
-    "url": "https://github.com/OverstockMedici/insight-ui/issues"
+    "url": "https://github.com/RavenDevKit/insight-ui/issues"
   },
-  "homepage": "https://github.com/OverstockMedici/insight-ui",
+  "homepage": "https://github.com/RavenDevKit/insight-ui",
   "license": "MIT",
   "keywords": [
     "insight",
