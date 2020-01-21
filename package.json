@@ -10,7 +10,8 @@
     }
   ],
   "scripts": {
-    "build": "bower install && grunt compile"
+    "build": "bower install && grunt compile",
+    "dev": "grunt watch"
   },
   "bugs": {
     "url": "https://github.com/RavenDevKit/insight-ui/issues"
