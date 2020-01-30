@@ -4,6 +4,21 @@ angular.module('insight.address').controller('AddressController',
   function($scope, $rootScope, $routeParams, $location, Global, Address, getSocket) {
     $scope.global = Global;
 
+    var _cleanAssetBalances = function (balanceObj) {
+        // Turn the balance obj into an array [{ name: IPHONE!, totalRecieved: 0, totalSpent: 0, balance: 1 }]
+        var finalArray = [];
+        for(var key in balanceObj) {
+            if (key !== 'RVN') {
+                var name = key;
+                var totalReceived = balanceObj[key].totalReceived / 100000000;
+                var totalSpent = balanceObj[key].totalSpent / 100000000;
+                var balance = balanceObj[key].balance / 100000000;
+                finalArray.push({ name: name, totalReceived: totalReceived, totalSpent: totalSpent, balance: balance});
+            }
+        }
+        $scope.address.assetBalances = finalArray;
+    };
+
     var socket = getSocket($scope);
     var addrStr = $routeParams.addrStr;
 
@@ -41,9 +56,10 @@ angular.module('insight.address').controller('AddressController',
           addrStr: $routeParams.addrStr
         },
         function(address) {
-          $rootScope.titleDetail = address.addrStr.substring(0, 7) + '...';
-          $rootScope.flashMessage = null;
-          $scope.address = address;
+            $rootScope.titleDetail = address.addrStr.substring(0, 7) + '...';
+            $rootScope.flashMessage = null;
+            $scope.address = address;
+            _cleanAssetBalances(address.balances);
         },
         function(e) {
           if (e.status === 400) {

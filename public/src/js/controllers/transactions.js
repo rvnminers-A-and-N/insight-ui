@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('insight.transactions').controller('transactionsController',
-function($scope, $rootScope, $routeParams, $location, Global, Transaction, TransactionsByBlock, TransactionsByAddress) {
+function($http, $scope, $rootScope, $routeParams, $location, Global, Transaction, TransactionsByBlock, TransactionsByAddress) {
   $scope.global = Global;
   $scope.loading = false;
   $scope.loadedBy = null;
@@ -9,8 +9,66 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
   var pageNum = 0;
   var pagesTotal = 1;
   var COIN = 100000000;
+  // Track addresses to find duplicates in vout (returns)
+  var vinAddresses = [];
 
-  var _aggregateItems = function(items) {
+  var _aggregateItems = function(items, type, txIndex) {
+    // When we get all transactions, look through each item
+    // If the item has an asset we need to update the value to be that asset
+    // Loop through each transaction item
+    items.forEach(function(txItem) {
+        // If these are vin items, grab each address to later crosscheck with vouts
+        if (type === 'vin') {
+            // Make sure an array exists at this txIndex, if not, make one
+            if (!vinAddresses[txIndex]) { vinAddresses[txIndex] = [] };
+            // Only push if an address exists
+            if (txItem.addr) { vinAddresses[txIndex].push(txItem.addr); }
+        } else if (type === 'vout') {
+            // Cross check the vout address with the vin address to know if it matches
+            var voutAddressArray = txItem.scriptPubKey.addresses || [];
+            // Just use the first address (not sure if this is ideal...)
+            var voutAddress = voutAddressArray[0];
+            // Cross check this address with each stored vinAddress to see if we find a match
+            if (vinAddresses[txIndex].indexOf(voutAddress) > -1) {
+                // Address found, set address match to true
+                txItem.addressMatch = true;
+            }
+        }
+        // Check the value of this item
+        // If the value is 0 or less, **ASSUME** it is an asset
+        // Parse the value to get even tiny numbers...
+        if (parseFloat(txItem.value, 100) <= 0) {
+            // We know this item is referencing an asset value
+            // Check if we've been given asset in the object already (vout)
+            if (txItem.asset) {
+                // We have all the asset data we need
+                // Create a new assetValue key in the item data
+                txItem.assetValue = txItem.asset.amount + ' ' + txItem.asset.name;
+            // Item does not have an asset key (vin)
+            // Also, it needs vout data
+            } else if (txItem.vout) {
+                // We need to make a network request to get this asset data
+                var urlBase = '/api/tx/';
+                var urlTxId = txItem.txid;
+                var useVoutIndex = txItem.vout;
+                var fullUrl = urlBase + urlTxId;
+                // Make an $http network call to get assetData from vin txid
+                $http({ method: 'GET', url: fullUrl, cache: true, timeout: 5000 })
+                .success(function (txObj) {
+                    var voutArray = txObj.vout;
+                    var targetVout = voutArray[useVoutIndex];
+                    var newAssetObj = targetVout.asset;
+                    txItem.assetValue = newAssetObj.amount + ' ' + newAssetObj.name;
+                })
+                .error(function() {
+                    txItem.assetValue = 'Failed to fetch asset';
+                });
+            // This is a vout with 0 value and no vout index
+            // Typically shows 'OP_RETURN transaction [0]'
+            }
+        }
+    });
+
     if (!items) return [];
 
     var l = items.length;
@@ -81,9 +139,9 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     return ret;
   };
 
-  var _processTX = function(tx) {
-    tx.vinSimple = _aggregateItems(tx.vin);
-    tx.voutSimple = _aggregateItems(tx.vout);
+  var _processTX = function(tx, index) {
+    tx.vinSimple = _aggregateItems(tx.vin, 'vin', index);
+    tx.voutSimple = _aggregateItems(tx.vout, 'vout', index);
   };
 
   var _paginate = function(data) {
@@ -92,8 +150,8 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     pagesTotal = data.pagesTotal;
     pageNum += 1;
 
-    data.txs.forEach(function(tx) {
-      _processTX(tx);
+    data.txs.forEach(function(tx, index) {
+      _processTX(tx, index);
       $scope.txs.push(tx);
     });
   };

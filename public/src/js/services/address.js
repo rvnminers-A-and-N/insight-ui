@@ -20,5 +20,3 @@ angular.module('insight.address').factory('Address',
     }
   });
 });
-
- 

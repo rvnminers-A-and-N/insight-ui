@@ -140,7 +140,7 @@ module.exports = function(grunt) {
     },
     watch: {
       main: {
-        files: ['public/src/js/**/*.js'],
+        files: ['public/src/js/**/*.js', 'public/views/**/*.html'],
         tasks: ['concat:main', 'uglify:main'],
       },
       css: {
