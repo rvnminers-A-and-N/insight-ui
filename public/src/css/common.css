@@ -4,12 +4,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-.rvn-summary {
+.mewc-summary {
     display: inline-block;
     vertical-align:top;
     margin-right: 30px;
 }
-.rvn-summary h2 {
+.mewc-summary h2 {
     margin-top: 0;
 }
 .table.assetTable {
@@ -6843,7 +6843,7 @@ body,html {
     background-size: 80px
 }
 
-#powered a.ravencoin,#powered a.twitter {
+#powered a.meowcoin,#powered a.twitter {
     width: 20%;
     background-size: 80px
 }
@@ -6870,7 +6870,7 @@ body,html {
     background-image: url(../img/discord.png)
 }
 
-#powered a.ravencoin {
+#powered a.meowcoin {
     background-image: url(../img/github.png)
 }
 
@@ -6888,7 +6888,7 @@ body,html {
     filter: drop-shadow(0px 0 3px #000)
 }
 
-#powered a.ravencoin:hover {
+#powered a.meowcoin:hover {
     background-image: url(../img/github.png);
     filter: drop-shadow(0px 0 3px #000)
 }

@@ -1,22 +1,22 @@
 # Insight UI
 
-A Ravencoin blockchain explorer web application service for [Ravencore Node](https://github.com/RavenDevKit/ravencore-node) using the [Insight API](https://github.com/RavenDevKit/insight-api).
+A Meowcoin blockchain explorer web application service for [Meowcoincore Node](https://github.com/rvnminers-A-and-N/meowcoincore-node) using the [Insight API](https://github.com/rvnminers-A-and-N/insight-api).
 
 ## Quick Start
 
-Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Ravencore](https://github.com/RavenDevKit/ravencore).
+Please see the guide at [https://bitcore.io/guides/full-node](https://bitcore.io/guides/full-node) for information about getting a block explorer running. This is only the front-end component of the block explorer, and is packaged together with all of the necessary components in [Meowcoincore](https://github.com/rvnminers-A-and-N/meowcoincore).
 
 ## Getting Started
 
 To manually install all of the necessary components, you can run these commands:
 
 ```bash
-npm install -g ravencore-node
-ravencore-node create mynode
+npm install -g meowcoincore-node
+meowcoincore-node create mynode
 cd mynode
-ravencore-node install insight-api
-ravencore-node install insight-ui
-ravencore-node start
+meowcoincore-node install insight-api
+meowcoincore-node install insight-ui
+meowcoincore-node start
 ```
 
 Open a web browser to `http://localhost:3001/insight/`
@@ -70,11 +70,11 @@ compile***.
 
 ## Note
 
-For more details about the [Insight API](https://github.com/RavenDevKit/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/RavenDevKit/insight-api).
+For more details about the [Insight API](https://github.com/rvnminers-A-and-N/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/rvnminers-A-and-N/insight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/RavenDevKit/insight-ui).
+Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/rvnminers-A-and-N/insight-ui).
 
 
 ## License

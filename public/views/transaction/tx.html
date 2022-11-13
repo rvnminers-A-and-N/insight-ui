@@ -34,8 +34,8 @@
         <div data-ng-repeat="vin in tx.vin| startFrom:currentInExpanded*sizeInExpanded | limitTo:sizeInExpanded" data-ng-if="fromVinCollapsed ? v_index == vin.n : 1">
           <div class="panel panel-default transaction-vin-vout">
             <div class="panel-body">
-              <div class="pull-right rvn-value">
-                {{vin.assetValue || $root.currency.getConvertion(vin.value) || vin.value + ' RVN'}}
+              <div class="pull-right mewc-value">
+                {{vin.assetValue || $root.currency.getConvertion(vin.value) || vin.value + ' MEWC'}}
               </div>
               <div class="ellipsis">
                 <a class="glyphicon glyphicon-chevron-right" href="tx/{{vin.txid}}/>/{{vin.vout}}" title="Outpoint: {{vin.txid}},{{vin.vout}}"></a>
@@ -96,15 +96,15 @@
         <div data-ng-repeat="vout in tx.vout| startFrom:currentOutExpanded*sizeOutExpanded | limitTo:sizeOutExpanded">
           <div class="panel panel-default transaction-vin-vout">
             <div class="panel-body">
-              <div class="pull-right rvn-value">
-                <span>{{vout.assetValue || $root.currency.getConvertion(vout.value) || vout.value + ' RVN'}}
+              <div class="pull-right mewc-value">
+                <span>{{vout.assetValue || $root.currency.getConvertion(vout.value) || vout.value + ' MEWC'}}
                   <span class="text-success" data-ng-show="!vout.spentTxId" tooltip="Output is unspent" tooltip-placement="left">(U)</span>
                   <a class="glyphicon glyphicon-chevron-right" data-ng-show="vout.spentTxId" href="tx/{{vout.spentTxId}}/</{{vout.spentIndex}}" title="Spent at: {{vout.spentTxId}},{{vout.spentIndex}}"></a>
                 </span>
               </div>
               <div class="ellipsis">
                 <span data-ng-show="vout.notAddr" data-ng-repeat="address in vout.scriptPubKey.addresses">{{address}}</span>
-				<span class="text-muted" title="Current Ravencoin Address" data-ng-show="address == $root.currentAddr" data-ng-repeat="address in vout.scriptPubKey.addresses">{{address}}</span>
+				<span class="text-muted" title="Current Meowcoin Address" data-ng-show="address == $root.currentAddr" data-ng-repeat="address in vout.scriptPubKey.addresses">{{address}}</span>
 				<a href="address/{{address}}" data-ng-show="!vout.notAddr && address != $root.currentAddr" data-ng-repeat="address in vout.scriptPubKey.addresses">{{address}}</a>
                 <span data-ng-show="vout.addressMatch" class="text-success">(Return)</span>
               </div>
@@ -144,12 +144,12 @@
 <div class="line-top row" data-ng-hide="!tx">
   <div class="col-xs-6 col-sm-4 col-md-4">
     <span data-ng-show="!tx.isCoinBase &&  !isNaN(parseFloat(tx.fees))"
-      class="txvalues txvalues-default"><span translate>Fee</span>: {{$root.currency.getConvertion(tx.fees) || tx.fees + 'RVN'}} </span>
+      class="txvalues txvalues-default"><span translate>Fee</span>: {{$root.currency.getConvertion(tx.fees) || tx.fees + 'MEWC'}} </span>
   </div>
   <div class="col-xs-6 col-sm-8 col-md-88 text-right">
     <span data-ng-show="tx.confirmations" class="txvalues
       txvalues-success">{{tx.confirmations}} <span translate>Confirmations</span></span>
     <span data-ng-show="!tx.confirmations" class="txvalues txvalues-danger" translate>Unconfirmed Transaction!</span>
-    <span class="txvalues txvalues-primary">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' RVN' }}</span>
+    <span class="txvalues txvalues-primary">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' MEWC' }}</span>
   </div>
 </div>

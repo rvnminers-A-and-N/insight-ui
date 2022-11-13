@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: public/views/transaction/tx.html
@@ -95,6 +95,10 @@ msgstr "Une erreur s'est produite dans le processus de vérification."
 msgid "An error occured:<br>{{error}}"
 msgstr "Une erreur est survenue:<br>{{error}}"
 
+#: public/views/includes/connection.html
+msgid "and failed.)"
+msgstr "et j'ai échoué.)"
+
 #: public/views/status.html
 msgid "Application Status"
 msgstr "État de l’Application"
@@ -132,6 +136,10 @@ msgstr "Résumé des Blocs"
 msgid "Blocks"
 msgstr "Blocs"
 
+#: public/views/statistics.html
+msgid "Blocks found"
+msgstr "Blocs trouvés"
+
 #: public/views/rich_list.html
 msgid "Blocks Mined"
 msgstr "Blocs minés"
@@ -165,10 +173,10 @@ msgstr ""
 
 #: public/views/includes/connection.html
 msgid ""
-"Can't connect to ravend to get live updates from the p2p network. (Tried "
-"connecting to ravend at {{host}}:{{port}} and failed.)"
+"Can't connect to meowcoind to get live updates from the p2p network. (Tried "
+"connecting to meowcoind at {{host}}:{{port}} and failed.)"
 msgstr ""
-"Impossible de se connecter à ravend pour obtenir des mises à jour en direct "
+"Impossible de se connecter à meowcoind pour obtenir des mises à jour en direct "
 "du réseau p2p. (J'ai essayé de vous connecter à {{host}}:{{port}} et j'ai "
 "échoué.)"
 
@@ -183,6 +191,10 @@ msgstr "Terminé"
 #: public/views/transaction.html public/views/transaction/tx.html
 msgid "Confirmations"
 msgstr "Confirmations"
+
+#: public/views/address.html
+msgid "confirmed"
+msgstr "confirmé"
 
 #: public/views/includes/header.html
 msgid "Conn"
@@ -201,8 +213,8 @@ msgid "Connections to other nodes"
 msgstr "Connections aux autres nodes"
 
 #: public/views/status.html
-msgid "Current Blockchain Tip (ravencore)"
-msgstr "Blockchain Tip actuel (ravencore)"
+msgid "Current Blockchain Tip (meowcoincore)"
+msgstr "Blockchain Tip actuel (meowcoincore)"
 
 #: public/views/statistics.html
 msgid "Current Network Hashrate"
@@ -211,6 +223,10 @@ msgstr "Taux de hachage actuel du réseau"
 #: public/views/status.html
 msgid "Current Sync Status"
 msgstr "État actuel de la synchronisation"
+
+#: public/views/network.html
+msgid "days"
+msgstr "journées"
 
 #: public/views/transaction.html
 msgid "Details"
@@ -248,6 +264,10 @@ msgstr "Message d'erreur:"
 msgid "Error!"
 msgstr "Erreur!"
 
+#: public/views/index.html
+msgid "Explorer is now available at"
+msgstr "Explorer est maintenant disponible sur"
+
 #: public/views/transaction/tx.html
 msgid "Fee"
 msgstr "Frais"
@@ -281,6 +301,10 @@ msgstr "Hauteur"
 msgid "here"
 msgstr "ici"
 
+#: public/views/network.html
+msgid "hrs"
+msgstr "heures"
+
 #: public/views/transaction.html public/views/transaction/tx.html
 msgid "Included in Block"
 msgstr "Inclus dans le bloc"
@@ -310,8 +334,8 @@ msgid "Last Block"
 msgstr "Dernier Bloc"
 
 #: public/views/status.html
-msgid "Last Block Hash (ravend)"
-msgstr "Hash du Dernier Bloc (ravend)"
+msgid "Last Block Hash (meowcoind)"
+msgstr "Hash du Dernier Bloc (meowcoind)"
 
 #: public/views/block_list.html
 msgid "Lastest block from date"
@@ -384,7 +408,7 @@ msgstr "Miné par"
 
 #: public/views/block_list.html
 msgid "mined on:"
-msgstr "Miné le:"
+msgstr "miné le:"
 
 #: public/views/transaction.html
 msgid "Mined Time"
@@ -393,6 +417,10 @@ msgstr "Moment du minage"
 #: public/views/status.html
 msgid "Mining Difficulty"
 msgstr "Difficulté de Minage"
+
+#: public/views/network.html
+msgid "mins"
+msgstr "minutes"
 
 #: public/views/statistics.html
 msgid "minutes"
@@ -451,6 +479,10 @@ msgid "Percent of total(blocks found)"
 msgstr "Pourcentage du total (blocs trouvés)"
 
 #: public/views/pools.html
+msgid "Pool Address"
+msgstr "Adresse de la Pool"
+
+#: public/views/pools.html
 msgid "Pool Name"
 msgstr "Nom du pool"
 
@@ -479,40 +511,40 @@ msgid "Rank"
 msgstr "Rang"
 
 #: public/views/charts.html
-msgid "Ravencoin Circulation"
-msgstr "Distribution de Ravencoin"
+msgid "Meowcoin Circulation"
+msgstr "Distribution de Meowcoin"
 
 #: public/views/messages_verify.html
-msgid "Ravencoin comes with a way of signing arbitrary messages."
-msgstr "Ravencoin est doté d’un moyen de signer des messages."
+msgid "Meowcoin comes with a way of signing arbitrary messages."
+msgstr "Meowcoin est doté d’un moyen de signer des messages."
 
 #: public/views/index.html
-msgid "Ravencoin Community"
-msgstr "Communauté Ravencoin"
+msgid "Meowcoin Community"
+msgstr "Communauté Meowcoin"
 
 #: public/views/rich_list.html
-msgid "Ravencoin Distribution"
-msgstr "Répartition de Ravencoin"
+msgid "Meowcoin Distribution"
+msgstr "Répartition de Meowcoin"
 
 #: public/views/statistics.html
-msgid "Ravencoin Mined:"
-msgstr "Ravencoin Miné:"
+msgid "Meowcoin Mined:"
+msgstr "Meowcoin Miné:"
 
 #: public/views/pools.html
-msgid "Ravencoin Pools"
-msgstr "Ravencoin Pools"
+msgid "Meowcoin Pools"
+msgstr "Meowcoin Pools"
 
 #: public/views/statistics.html
-msgid "Ravencoin Pools Stats"
-msgstr "Ravencoin Pools Statistiques"
+msgid "Meowcoin Pools Stats"
+msgstr "Meowcoin Pools Statistiques"
 
 #: public/views/statistics.html
-msgid "Ravencoin Statistics for the last 24 hours"
-msgstr "Statistiques de Ravencoin des dernières 24 heures"
+msgid "Meowcoin Statistics for the last 24 hours"
+msgstr "Statistiques de Meowcoin des dernières 24 heures"
 
 #: public/views/index.html
-msgid "Ravencore"
-msgstr "Ravencore"
+msgid "Meowcoincore"
+msgstr "Meowcoincore"
 
 #: public/views/transaction_sendraw.html
 msgid "Raw transaction data"
@@ -539,6 +571,10 @@ msgstr "Rich list"
 #: public/views/includes/search.html
 msgid "Search for block, transaction or address"
 msgstr "Recherche de bloc, transaction ou adresse"
+
+#: public/views/network.html
+msgid "secs"
+msgstr "secondes"
 
 #: public/views/index.html
 msgid "See all blocks"
@@ -617,9 +653,13 @@ msgstr "Type de Synchronisation"
 msgid "Synced Blocks"
 msgstr "Blocs synchronisés"
 
+#: public/views/index.html
+msgid "TESTNET"
+msgstr "TESTNET"
+
 #: public/views/charts.html
-msgid "The current supply of Ravencoin on the network."
-msgstr "L'offre actuelle de Ravencoin sur le réseau."
+msgid "The current supply of Meowcoin on the network."
+msgstr "L'offre actuelle de Meowcoin sur le réseau."
 
 #: public/views/dummy-translations.html
 msgid "The daily average of fees paid to miners per transaction."
@@ -634,8 +674,8 @@ msgid "The message is verifiably from {{verification.address}}."
 msgstr "Le message est vérifiable depuis {{verification.address}}."
 
 #: public/views/dummy-translations.html
-msgid "The number of daily confirmed RVN transactions."
-msgstr "Le nombre de transactions quotidiennes RVN confirmées."
+msgid "The number of daily confirmed MEWC transactions."
+msgstr "Le nombre de transactions quotidiennes MEWC confirmées."
 
 #: public/views/dummy-translations.html
 msgid ""
@@ -652,19 +692,19 @@ msgstr "Il n'y a aucune transaction impliquant cette adresse."
 #: public/views/transaction_sendraw.html
 msgid ""
 "This form can be used to broadcast a raw transaction in hex format over\n"
-"        the Ravencoin network."
+"        the Meowcoin network."
 msgstr ""
 "Ce formulaire peut être utilisé pour diffuser une transaction brute au "
 "format hexadécimal\n"
-"         le réseau Ravencoin."
+"         le réseau Meowcoin."
 
 #: public/views/messages_verify.html
 msgid ""
 "This form can be used to verify that a message comes from\n"
-"        a specific Ravencoin address."
+"        a specific Meowcoin address."
 msgstr ""
 "Ce formulaire peut être utilisé pour vérifier qu'un message provient de\n"
-"         une adresse Ravencoin spécifique."
+"         une adresse Meowcoin spécifique."
 
 #: public/views/statistics.html
 msgid "Time Between Blocks:"
@@ -681,6 +721,10 @@ msgstr "Horodatage"
 #: public/views/block_list.html
 msgid "Today"
 msgstr "Aujourd’hui"
+
+#: public/views/pools.html
+msgid "total blocks found:"
+msgstr "nombre total de blocs trouvés:"
 
 #: public/views/statistics.html
 msgid "Total Circulating Supply:"
@@ -709,6 +753,10 @@ msgstr "Volume d’échange:"
 #: public/views/transaction.html
 msgid "Transaction"
 msgstr "Transaction"
+
+#: public/views/transaction_sendraw.html
+msgid "Transaction id:"
+msgstr "ID de transaction:"
 
 #: public/views/transaction_sendraw.html
 msgid "Transaction succesfully broadcast.<br>Transaction id: {{txid}}"
@@ -779,3 +827,18 @@ msgstr "En attente de pools ..."
 #: public/views/index.html
 msgid "Waiting for transactions..."
 msgstr "En attente des transactions…"
+
+#~ msgid "{{p.uptime.Days}} days"
+#~ msgstr "{{p.uptime.Days}} days"
+
+#~ msgid "{{p.uptime.Hours}} hrs"
+#~ msgstr "{{p.uptime.Hours}} hrs"
+
+#~ msgid "{{p.uptime.Minutes}} mins"
+#~ msgstr "{{p.uptime.Minutes}} mins"
+
+#~ msgid "{{p.uptime.Seconds}} secs"
+#~ msgstr "{{p.uptime.Seconds}} secs"
+
+#~ msgid "Summary <small>confirmed</small>"
+#~ msgstr "Résumé <small>confirmé</small>"

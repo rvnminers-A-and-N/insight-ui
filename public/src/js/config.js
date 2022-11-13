@@ -4,7 +4,7 @@ angular.module('insight')
 .constant('Constants', {
 
 	CURRENCY: {
-		RVN : 'RVN',
+		MEWC : 'MEWC',
 		USD : 'USD',
 		BTC : 'BTC'
 	},
@@ -14,7 +14,7 @@ angular.module('insight')
 	CHART_DAYS: 14,
     NETWORK: window.current_network ? window.current_network : 'livenet',
     DEFAULT_LANGUAGE: localStorage.getItem('insight-language') || 'en',
-    DEFAULT_CURRENCY: localStorage.getItem('insight-currency') || 'RVN'
+    DEFAULT_CURRENCY: localStorage.getItem('insight-currency') || 'MEWC'
 
 });
 //Setting up route
@@ -22,7 +22,7 @@ angular.module('insight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: 'views/block.html',
-      title: 'Ravencoin Block '
+      title: 'Meowcoin Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -34,7 +34,7 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: 'views/transaction.html',
-      title: 'Ravencoin Transaction '
+      title: 'Meowcoin Transaction '
     }).
     when('/', {
       templateUrl: 'views/index.html',
@@ -42,15 +42,15 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/blocks', {
       templateUrl: 'views/block_list.html',
-      title: 'Ravencoin Blocks solved Today'
+      title: 'Meowcoin Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: 'views/block_list.html',
-      title: 'Ravencoin Blocks solved '
+      title: 'Meowcoin Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
-      title: 'Ravencoin Address '
+      title: 'Meowcoin Address '
     }).
 	 when('/charts', {
       templateUrl: 'views/charts.html',
